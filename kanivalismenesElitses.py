@@ -13,11 +13,11 @@ import sys
 at 224x224 pixels.
 Returns a tuple (healthyImageList, cancerImageList).'''
 def parseImages():
-    path_no = 'complete_mednode_dataset/naevus'
-    path_yes = 'complete_mednode_dataset/melanoma'
+    path_healthy = 'complete_mednode_dataset/naevus' #allaksa ta yes no se cancer healthy
+    path_cancer = 'complete_mednode_dataset/melanoma'
     cancerImageList = []
     healthyImageList = []
-    paths = [path_yes, path_no]
+    paths = [path_cancer, path_healthy]  
     names = []
     global cancer, healthy
     for path in paths:
@@ -28,10 +28,10 @@ def parseImages():
     healthy = names[1]
 
     for image in cancer:
-        cancerImageList.append(Image.open(os.path.join(path_yes, image), 'r').resize((224, 224)))
+        cancerImageList.append(Image.open(os.path.join(path_cancer, image), 'r').resize((224, 224)))
 
     for image in healthy:
-        healthyImageList.append(Image.open(os.path.join(path_no, image), 'r').resize((224, 224)))
+        healthyImageList.append(Image.open(os.path.join(path_healthy, image), 'r').resize((224, 224)))
     return (healthyImageList, cancerImageList)
 '''End of function definition'''
 
@@ -61,8 +61,6 @@ def imageConversionToYIQ(image):
             ivydeli.append(a)
             ivydelii.append(b)
             ivydeliii.append(c)
-            #ivy.append(list(a))
-        #ivy.append(list(a))
     y = np.array(ivydeli).reshape(shape)
     i = np.array(ivydelii).reshape(shape)
     q = np.array(ivydeliii).reshape(shape)
@@ -105,8 +103,8 @@ def displayResults(image_equalized):
     axes = np.zeros((2, 1), dtype=np.object)
     #axes[0, 0] = fig.add_subplot(2, 1, 1)
     #axes[0, 0] = fig.add_subplot(1,1,1, sharex=axes[0, 0], sharey=axes[0, 0])
-    axes[0, 0] = fig.add_subplot(2, 2, 1)
-    axes[1, 0] = fig.add_subplot(2, 2, 2, sharex=axes[0, 0])
+    axes[0, 0] = fig.add_subplot(2, 1, 1) #xreiazomaste 2 grammes kai mia sthlh gia na valoume thn epeksergasmenh eikona(stoixeio 1) kai to histogram (stoixeio 2) 
+    axes[1, 0] = fig.add_subplot(2, 1, 2) #den xreiazetai  sharex=axes[0, 0])
     ax_img, ax_hist, ax_cdf = plot_img_and_hist(image_equalized, axes[:, 0])
     ax_img.set_title('Histogram equalization')
 
@@ -127,8 +125,8 @@ if __name__ == "__main__":
     if not os.path.exists(directory):
         os.makedirs(directory)
     global namecounter
-    for namecounter in range(len(images[0])):
-        testImage = images[0][namecounter] #to 0 gia melanoma to 1 gia throumpes
+    for namecounter in range(len(images[1])):
+        testImage = images[1][namecounter] #to 0 gia throumpes to 1 gia melanwma
         print(testImage)# Selects one image from the list
         yiqtestImage = imageConversionToYIQ(testImage)
         img = yiqtestImage[0] # The val of img is the 2D numpy array responding to the Y channel
