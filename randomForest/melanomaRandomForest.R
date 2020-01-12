@@ -77,7 +77,7 @@ test = subset(dataset, split == F)
 
 ctrl <- trainControl(method = 'repeatedcv', number = 10, repeats = 6, summaryFunction = multiClassSummary, classProbs = T)
 
-rfModel <- train(disease ~ ., 
+rfModel <- train(disease ~ . , 
                     data = training, method = 'rf',
                     trControl = ctrl,
                     preProc = c('center', 'scale'),
