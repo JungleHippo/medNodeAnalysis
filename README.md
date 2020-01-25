@@ -43,3 +43,4 @@
 <p>The .csv files were the read with R and for every photo and color, logistic curves were fitted, resulting in 3 parametres, scale, asymptote and xmid, with the formula <em>y = Asym/(1-exp((x-xmid)/scal))</em>. The asymptotes and scales were used for each photo, resulting to 6 predictors from the 3 colors, used to train a random forest ML model. The code for the training is located in the <em>RandomForest</em> folder. </p>
 <p>The description for the second method will be soon available.</p>
     
+Co-authored-by:@smakets
