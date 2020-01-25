@@ -1,7 +1,7 @@
 # medNodeAnalysis
 
 <p>This project uses the dataset found <a href="https://www.w3schools.com">here</a>, published as part of the following article:</br>
-<em>I. Giotis, N. Molders, S. Land, M. Biehl, M.F. Jonkman and N. Petkov: "MED-NODE: A computer-assisted melanoma diagnosis system using non-dermoscopic images", Expert Systems with Applications, 42 (2015), 6578-6585 </em></br>It was realised as a project necessary for the first term class of Physiology in M.Sc. in Medical Informatics, A.U.TH.</p>
+<em>I. Giotis, N. Molders, S. Land, M. Biehl, M.F. Jonkman and N. Petkov: "MED-NODE: A computer-assisted melanoma diagnosis system using non-dermoscopic images", Expert Systems with Applications, 42 (2015), 6578-6585 </em></br>It was realised as a project necessary for the first term class of Physiology in M.Sc. in Medical Informatics, A.U.TH., for the classification using ML to superficially spreading melanomas and naevi. </p>
 <p>The first method is random forest classification, according to six parametres of every photo. Each photo was read using python and OpenCV <em>(code <a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/NumericalDataExtraction.py">here</a>)</em>, had the normalized numbers of pixels of a given color value in every one of RGB channels counted and saved as cumulative distribution curves in <a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/PixelIntensitiesHistogramsandCDFs.zip">*.csv files</a>, in the form of:
   <table>
     <tr>
