@@ -44,11 +44,10 @@
 </p>
 <p>The second classification method is based on CNNs.
 </p> 
-<p>_Image preprocessing_ (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/image_preprocessing_for_medNode.ipynb">.ipynb here</a>)</p>
+<p>__Image preprocessing__ (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/image_preprocessing_for_medNode.ipynb">.ipynb here</a>)</p>
 <p>Images' channels were converted from RGB to YIQ. Every image was transformed by applying separately contrast stretching, histogram equalization and adapted histogram equalization methods on Y channel's histogram. Converting transformed Y channel and IQ channels back to RGB resulted in a new image which was appended to a list according to the equilazation method and the class. A dictionary of these lists is written in pickle format.</p>
-<p>_Model_ (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/CNN_for_medNode.ipynb">.ipynb here</a>)</p>
+<p>__Model__ (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/CNN_for_medNode.ipynb">.ipynb here</a>)</p>
 <p>4 datasets are imported by reading med node dataset and the created dataMelanoma.pickle file of the preprocessed images. Tensorflow was used for data augmentation to increase the datasets. We created the architecture depicted below using keras and trained a model for each dataset.</p>
-<p> _Model summary_ </br>
+<p> __Model summary__ </br>
 <img src="https://github.com/JungleHippo/medNodeAnalysis/blob/master/CNN_summary.png"="model summary"width="150" height="300"/></p>
-<p>View accuracies, confusion matrices, metrics' plots</p>
 Co-authored-by:@smakets
