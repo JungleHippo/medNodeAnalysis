@@ -46,5 +46,5 @@ Image preprocessing (<a href="https://github.com/JungleHippo/medNodeAnalysis/blo
 <p>Images' channels were converted from RGB to YIQ. Every image was transformed by applying separately contrast stretching, histogram equalization and adapted histogram equalization methods on Y channel's histogram. Converting transformed Y channel and IQ channels back to RGB resulted in a new image which was appended to a list according to the equilazation method and the class. A dictionary of these lists is written in pickle format.</p>
 <p>Model (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/CNN_for_medNode.ipynb">.ipynb here</a>)</p>
 <p>4 datasets are imported by reading med node dataset and the created dataMelanoma.pickle file of the preprocessed images. Tensorflow was used for data augmentation to increase the datasets. We created the architecture depicted below using keras and trained a model for each dataset.</p>
-
+<p>![alt text](https://github.com/JungleHippo/medNodeAnalysis/blob/master/CNN_summary.png)</p>
 Co-authored-by:@smakets
