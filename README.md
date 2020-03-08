@@ -40,9 +40,7 @@
       <td>f<sub>255,170</sub></td>
     </tr>
   </table></p>
-<p>The .csv files were the read with R and for every photo and color, logistic curves were fitted, resulting in 3 parametres, scale, asymptote and xmid, with the formula <em>y = Asym/(1-exp((x-xmid)/scal))</em>. The asymptotes and the sums of the squared residues (<em>res = fit - value</em>) were used for each photo, resulting to 6 predictors totally, in order to train a random forest model. The code for the training is located in the <em>RandomForest</em> folder. </p>
-<p> </p>
-<p> </p>
+<p>The .csv files were the read with R and for every photo and color, logistic curves were fitted, resulting in 3 parametres, scale, asymptote and xmid, with the formula <em>y = Asym/(1-exp((x-xmid)/scal))</em>. The asymptotes and the sums of the squared residues (<em>res = fit - value</em>) were used for each photo, resulting to 6 predictors totally, in order to train a random forest model. The code for the training is located in the <em>RandomForest</em> folder. </br> </br></p>
 <p>The second classification method is based on CNNs.</p> 
 Image preprocessing (<a href="https://github.com/JungleHippo/medNodeAnalysis/blob/master/image_preprocessing_for_medNode.ipynb">.ipynb here</a>)</p>
 <p>Images' channels were converted from RGB to YIQ. Every image was transformed by applying separately contrast stretching, histogram equalization and adapted histogram equalization methods on Y channel's histogram. Converting transformed Y channel and IQ channels back to RGB resulted in a new image which was appended to a list according to the equilazation method and the class. A dictionary of these lists is written in pickle format.</p>
